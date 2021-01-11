@@ -1,4 +1,4 @@
-# Ggerganov Ggerganov
+# homebrew-ggerganov
 
 ## How do I install these formulae?
 `brew install ggerganov/ggerganov/<formula>`
