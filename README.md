@@ -1,6 +1,6 @@
 # homebrew-ggerganov
 
-- [HNterm](https://github.com/ggerganov/hnterm) - Hacker News in the terminal
+- [HNTerm](https://github.com/ggerganov/hnterm) - Hacker News in the terminal
 - [Waver](https://github.com/ggerganov/ggwave/tree/master/examples/waver) - Messaging through sound
 
 ## How do I install these formulae?
