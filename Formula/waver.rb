@@ -2,8 +2,8 @@ class Waver < Formula
   desc "Messaging through sound"
   homepage "https://waver.ggerganov.com"
   url "https://github.com/ggerganov/ggwave.git",
-    tag:      "waver-v1.3.2-brew-fixed",
-    revision: "eb882f155bbf8e502a28928510c3246d82a80c5e"
+    tag:      "waver-v1.4.0",
+    revision: "74f35ebcf0a2fa300536b4c39979ebea2f7923fa"
 
   license "MIT"
 
