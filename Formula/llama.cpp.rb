@@ -1,4 +1,4 @@
-$version = "b2494"
+$version = "b2514"
 
 class LlamaCpp < Formula
   desc "Inference of Meta's LLaMA model in pure C/C++"
