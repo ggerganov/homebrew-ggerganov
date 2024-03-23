@@ -4,7 +4,7 @@ class LlamaCpp < Formula
   desc "Inference of Meta's LLaMA model in pure C/C++"
   homepage "https://github.com/ggerganov/llama.cpp"
   version "1.#{$version}"
-  sha256 "8159de0d4ca4f998b02d135432193aad774f1077b58888cca691c39eb061a40a"
+  sha256 "31d445a96c247bbad349a1f4e353f96d738a74af6da5290d2503e19f99cd21ea"
   license "MIT"
 
   depends_on :macos
