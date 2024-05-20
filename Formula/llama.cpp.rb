@@ -1,28 +1,21 @@
-$version = "b2514"
-
 class LlamaCpp < Formula
-  desc "Inference of Meta's LLaMA model in pure C/C++"
+  desc "LLM inference in C/C++"
   homepage "https://github.com/ggerganov/llama.cpp"
-  version "1.#{$version}"
-  sha256 "31d445a96c247bbad349a1f4e353f96d738a74af6da5290d2503e19f99cd21ea"
+  # pull from git tag to get submodules
+  url "https://github.com/ggerganov/llama.cpp.git",
+  tag:      "b2950",
+  revision: "db10f01310beea8a1ef7798651b9d692fd1149d0"
   license "MIT"
 
-  depends_on :macos
-  on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/ggerganov/llama.cpp/releases/download/#{$version}/llama-b1-bin-macos-x64.zip"
-    else
-      url "https://github.com/ggerganov/llama.cpp/releases/download/#{$version}/llama-b1-bin-macos-arm64.zip"
-    end
-  end
-
   def install
-    # Install the necessary files to the Homebrew installation directory
-    bin.install "bin/main" => "llama-cli"
-    bin.install "bin/server" => "llama-server"
+    system "make", "DLLAMA_FATAL_WARNINGS=ON", "DLLAMA_METAL_EMBED_LIBRARY=ON", "DLLAMA_CURL=ON"
+
+    bin.install "./main" => "llama-cli"
+    bin.install "./server" => "llama-server"
   end
 
   test do
-    system "#{bin}/llama-cli", "--version"
+    llama_cli_command = "llama-cli"
+    assert_includes shell_output(llama_cli_command), "Log start"
   end
 end
